@@ -1,0 +1,1 @@
+Any code that should only be exposed to the server and not to any client.

@@ -1,0 +1,1 @@
+Meteor gathers any files under this subdirectory and makes the contents of these files available to server code via the [Assets](http://docs.meteor.com/#assets) API. This is the place for any files that should be accessible to server code but not served to the client, like private data files.
