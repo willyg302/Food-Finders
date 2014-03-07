@@ -51,5 +51,17 @@
 </template>
 
 <template name="restaurant">
-	<div class="col-md-4">{{name}}</div>
+	<div class="col-md-4">
+		<div class="media">
+			<a class="pull-left" href="#">
+				<img class="media-object" src="http://placehold.it/64&text=Logo" alt="logo">
+			</a>
+			<div class="media-body">
+				<h4 class="media-heading">{{name}}</h4>
+				<div class="progress">
+					<div class="progress-bar progress-bar-{{progress complete}}" role="progressbar" aria-valuenow="{{complete}}" aria-valuemin="0" aria-valuemax="100" style="width: {{complete}}%;">{{complete}}%</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </template>

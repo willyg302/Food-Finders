@@ -4,8 +4,6 @@ Restaurants = new Meteor.Collection("restaurants");
 var restaurantsHandle = Meteor.subscribe("restaurants");
 
 
-
-
 Template.restaurantList.restaurants = function() {
 	all = Restaurants.find({}).fetch();
 	chunks = [];
@@ -17,3 +15,13 @@ Template.restaurantList.restaurants = function() {
 	chunks.push({row: all});
 	return chunks;
 };
+
+Template.restaurant.progress = function(complete) {
+	if (complete < 50) {
+		return 'danger';
+	}
+	if (complete < 80) {
+		return 'warning';
+	}
+	return 'success';
+}

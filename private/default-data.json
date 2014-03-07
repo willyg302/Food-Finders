@@ -1,17 +1,22 @@
 [
 	{
-		"name": "Bob's Burgers"
+		"name": "Bob's Burgers",
+		"complete": 96
 	},
 	{
-		"name": "Dave's Pizza"
+		"name": "Dave's Pizza",
+		"complete": 24
 	},
 	{
-		"name": "Joe's Spaghetti"
+		"name": "Joe's Spaghetti",
+		"complete": 65
 	},
 	{
-		"name": "Linda's Ice Cream"
+		"name": "Linda's Ice Cream",
+		"complete": 72
 	},
 	{
-		"name": "Dat One Place"
+		"name": "Dat One Place",
+		"complete": 35
 	}
 ]
