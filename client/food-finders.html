@@ -6,6 +6,10 @@
 
 <body>
 	{{> nav}}
+	<div class="container" id="main">
+
+		{{> restaurantList}}
+	</div>
 </body>
 
 <template name="nav">
@@ -29,23 +33,23 @@
 			</div>
 		</div>
 	</div>
+</template>
 
-	<div class="container">
-		<div class="starter-template">
-			<h1>Bootstrap starter template</h1>
-			<p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
-		</div>
 
-		<div class="row">
-			<div class="col-md-4">Restaurant</div>
-			<div class="col-md-4">Restaurant</div>
-			<div class="col-md-4">Restaurant</div>
-		</div>
+<template name="restaurantList">
+	{{#each restaurants}}
+		{{> restaurantRow}}
+	{{/each}}
+</template>
+
+<template name='restaurantRow'>
+	<div class='row'>
+		{{#each row}}
+			{{> restaurant}}
+		{{/each}}
 	</div>
 </template>
 
-<template name="hello">
-	<h1>Hello World!</h1>
-	{{greeting}}
-	<input type="button" value="Click" />
+<template name="restaurant">
+	<div class="col-md-4">{{name}}</div>
 </template>
