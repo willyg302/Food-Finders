@@ -1,7 +1,20 @@
 [
 	{
 		"name": "Bob's Burgers",
-		"complete": 96
+		"address": "1234 Street St.",
+		"zipcode": 96817,
+		"delivery": true,
+		"hours": "9-5",
+		"complete": 96,
+		"type": ["American", "Fusion"],
+		"keywords": ["burgers", "fries", "ice cream"],
+		"menu": [
+			{
+				"name": "Bob's All American",
+				"type": "burgers",
+				"price": 6.99
+			}
+		]
 	},
 	{
 		"name": "Dave's Pizza",
@@ -16,7 +29,7 @@
 		"complete": 72
 	},
 	{
-		"name": "I love Sushi",
+		"name": "I Love Sushi",
 		"complete": 99
 	},
 	{
@@ -44,7 +57,7 @@
 		"complete": 77
 	},
 	{
-		"name": "Sam's Delicatessan",
+		"name": "Sam's Delicatessen",
 		"complete": 89
 	},
 	{
