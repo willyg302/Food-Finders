@@ -7,8 +7,7 @@
 <body>
 	{{> nav}}
 	<div class="container" id="main">
-
-		{{> restaurantList}}
+		{{> mainPanel}}
 	</div>
 </body>
 
@@ -33,6 +32,14 @@
 			</div>
 		</div>
 	</div>
+</template>
+
+<template name="mainPanel">
+	{{#if mainview}}
+		{{> restaurantList}}
+	{{else}}
+		{{> menu}}
+	{{/if}}
 </template>
 
 
@@ -64,4 +71,8 @@
 			</div>
 		</div>
 	</div>
+</template>
+
+<template name="menu">
+	Test
 </template>
