@@ -34,22 +34,31 @@ Template.restaurant.progress = function(complete) {
 	return 'success';
 };
 
+/*
 Template.restaurant.events({
 	'mousedown .media': function(evt) {
 		Router.setRestaurant(this._id);
 	}
-});
+});*/
+
+Template.menu.restaurant = function() {
+	return Restaurants.findOne({_id: Session.get('restaurant_id')});
+};
 
 
 /** BACKBONE **/
 
 var MainRouter = Backbone.Router.extend({
 	routes: {
-		':restaurant_id': 'main'
+		'': 'main',
+		':restaurant_id': 'restaurant',
+		'*path': 'main'  // For any other path, go home
 	},
-	main: function(restaurant_id) {
-		var oldRestaurant = Session.get('restaurant_id');
-		if (oldRestaurant !== restaurant_id) {
+	main: function() {
+		Session.set('restaurant_id', null);
+	},
+	restaurant: function(restaurant_id) {
+		if (Session.get('restaurant_id') !== restaurant_id) {
 			Session.set('restaurant_id', restaurant_id);
 		}
 	},
@@ -58,8 +67,26 @@ var MainRouter = Backbone.Router.extend({
 	}
 });
 
-Router = new MainRouter;
+Router = new MainRouter();
 
 Meteor.startup(function() {
 	Backbone.history.start({pushState: true});
+});
+
+
+/**
+ * This is odd. So, we basically capture all a-href links and route them
+ * through Backbone instead because that retains the reactivity. This also means
+ * all href's must start with a slash.
+ *
+ * IF YOU TAKE THIS OUT LINKS WILL BE MEGA SLOW.
+ */
+$(document).on('click', 'a[href^="/"]', function(event) {
+	var href = $(event.currentTarget).attr('href');
+	if (!event.altKey && !event.ctrlKey && !event.metaKey && !event.shiftKey) {
+		event.preventDefault();
+		var url = href.replace(/^\//,'').replace('\#\!\/','');
+		Router.navigate(url, {trigger: true});
+		return false;
+	}
 });
