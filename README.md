@@ -1,6 +1,6 @@
 # Food Finders
 
-App for Human-Computer Interaction (HCI) class.
+A demo app for Human-Computer Interaction (HCI) class. You can visit a live version [here](http://foodfinders.meteor.com/).
 
 ## Running
 
@@ -10,7 +10,7 @@ App for Human-Computer Interaction (HCI) class.
    $ curl https://install.meteor.com/ | sh
    ```
 
-   Or if you use Windows, I'm too lazy to write out the instructions so just visit the site
+   Or if you use Windows, you can download [unofficial binaries](http://win.meteor.com/). Note that you will likely have to update Meteor after downloading and installing.
 
 2. Clone this repo
 
